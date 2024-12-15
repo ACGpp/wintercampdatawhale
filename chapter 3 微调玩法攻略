@@ -1,0 +1,63 @@
+大模型人格化：通过一系列技术手段，使大模型在语言表达、行为模式、情感反应等方面更接近人类，从而为用户带来更自然，更亲近，更个性化的交互体验
+
+数据格式
+	JSON（JavaScript Object Notation）：是一种轻量级的数据交换格式，采用键值对的数据形式表示数据。通常包含一个根对象，可以嵌套多个数组和基本数据类型，适合存储结构化数据如配置文件和api响应（可以直接load）
+	{
+  "name": "张三",
+  "age": 30,
+  "isStudent": false,
+  "courses": ["语文", "数学", "英语"],
+  "address": {
+    "city": "北京",
+    "street": "朝阳路"
+  }
+} 
+	JSONL（JSON lines）：是一种文本文件格式，每行包含一个独立的JSON对象，适用于逐行处理大型数据集，每行之间没有分隔符，便于流式读取和处理，节省内存（一行一个json，分别load）
+	{"name": "John", "age": 30, "city": "New York"}
+  {"name": "Alice", "age": 25, "city": "Los Angeles"}
+  {"name": "Bob", "age": 35, "city": "Chicago"}
+	
+数据集格式
+	Alpaca格式和ShareGpt格式
+	 格式	特点	结构	应用
+	Alpaca	1.主要用于指令驱动任务，如文本生成，摘要，翻译等	instruction（人类指令）	指令监督微调，预训练，偏好训练，KTO和多模态任务
+		2.包含清晰的指令，输入和输出字段，便于模型理解和执行	input（可选）
+			output（必填）
+			system（系统提示词，可选）
+			history（历史消息列表）
+	ShareGPT	1.侧重多轮对话，适用于对话系统的训练，模拟用户与ai的交互	数据集包含人类指令，模型回答，系统提示词和工具列表	适用于需要 模拟自然对话流的场景，例如聊天机器人，客服问答，陪伴式ai助手等
+		2.支持更多角色的种类，如human，gpt，observation，function等，这些角色以对象列表形式出现在conversation列中	偏好数据集需包含更优和更差的回答，以及可选的系统提示词和工具列表
+	Alpaca格式
+  {
+        "instruction": "人类指令（必填）",
+        "input": "人类输入（选填）",
+        "output": "模型回答（必填）",
+        "system": "系统提示词（选填）",
+        "history": [
+          ["第一轮指令（选填）", "第一轮回答（选填）"],
+          ["第二轮指令（选填）", "第二轮回答（选填）"]
+        ]
+  }> 
+	ShareGPT格式
+	{
+        "conversations": [
+          {
+                "from": "human",
+                "value": "人类指令"
+          },
+          {
+                "from": "function_call",
+                "value": "工具参数"
+          },
+          {
+                "from": "observation",
+                "value": "工具结果"
+          },
+          {
+                "from": "gpt",
+                "value": "模型回答"
+          }
+        ]（必填）,
+        "system": "系统提示词（选填）",
+        "tools": "工具描述（选填）"
+  }
