@@ -1,7 +1,7 @@
 import re
 import json
 
-file_path='C:/Users/15270/PycharmProjects/extract-dialogue/《三国演义》【爱上阅读_www.isyd.net】.txt'
+file_path='C:/Users/user/PycharmProjects/extract-dialogue/《三国演义》【爱上阅读_www.isyd.net】.txt'
 
 def read_file(file_path):
     with open(file_path,'r',encoding='utf-8')as file:

@@ -26,7 +26,7 @@ def save_to_txt(sentences,output_file):
             f.write(sentence+'\n')
 
 def main():
-    input_file='C:/Users/15270/PycharmProjects/纯正古人/cao_cao_sentences.txt'
+    input_file='C:/Users/user/PycharmProjects/纯正古人/cao_cao_sentences.txt'
     cleaned_file1='cleaned_cao_cao_sentences_1.txt'
     cleaned_file2 = 'cleaned_cao_cao_sentences_2.txt'
 

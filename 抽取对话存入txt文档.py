@@ -24,7 +24,7 @@ def save_to_txt(sentences, output_file):
 
 # 主函数
 def main():
-    input_file = 'C:/Users/15270/PycharmProjects/纯正古人/《三国演义》【爱上阅读_www.isyd.net】.txt'  # 《三国演义》的文本文件路径
+    input_file = 'C:/Users/user/PycharmProjects/纯正古人/《三国演义》【爱上阅读_www.isyd.net】.txt'  # 《三国演义》的文本文件路径
     output_file = 'cao_cao_sentences.txt'  # 输出的txt文件路径
 
     # 读取文本

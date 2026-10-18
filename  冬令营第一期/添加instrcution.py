@@ -49,5 +49,5 @@ def process_jsonl(file_path, output_file="alpaca_data.jsonl"):
 
 
 # 调用处理函数
-input_file = 'C:/Users/15270/Downloads/三国演义.jsonl'  # 替换为你自己的文件路径
+input_file = 'C:/Users/user/Downloads/三国演义.jsonl'  # 替换为你自己的文件路径
 process_jsonl(input_file)

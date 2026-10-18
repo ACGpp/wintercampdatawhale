@@ -37,7 +37,7 @@ def save_to_jsonl(data,output_file):
             f.write('\n')
 
 def main():
-    input_file='C:/Users/15270/PycharmProjects/纯正古人/cao_cao_dialoues.jsonl'
+    input_file='C:/Users/user/PycharmProjects/纯正古人/cao_cao_dialoues.jsonl'
     output_file='cao_cao_cleaned.jsonl'
 
     data=read_jsonl(input_file)

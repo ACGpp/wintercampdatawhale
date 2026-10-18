@@ -40,7 +40,7 @@ def save_to_jsonl(data,output_file):
             f.write('\n')
 
 def main():
-    file_path='C:/Users/15270/PycharmProjects/纯正古人/cao_cao_dialoues.jsonl'
+    file_path='C:/Users/user/PycharmProjects/纯正古人/cao_cao_dialoues.jsonl'
     output_file='cleaned_cao_cao_dialoues2.jsonl'
     data=read_jsonl(file_path)
     print(f"读取到的原始数据条数: {len(data)}")
